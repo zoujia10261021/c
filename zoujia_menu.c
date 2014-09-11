@@ -11,12 +11,7 @@
 /*  DESCRIPTION           :  This is a menu program                                               */
 /**************************************************************************************************/
 
-/*
- * Revision log:
- *
- * Created by Zoujia, 2014/09/10
- *
- */
+
 
 
 #include <stdio.h>
@@ -36,48 +31,47 @@ typedef struct DataNode
 /*check the cmd repeat or not*/
 int Check(char* cmd,tDataNode *head)
 {
-	 tDataNode * p = NULL;
-	 p = head;
-	while(p != NULL)
-	{
-		if(strcmp(cmd,p->cmd) == 0)
-		{
-			printf("repeat!please reinput\n");
-			return 1;
-		}
-		p = p->next;
-	}
-	return 0;
+    tDataNode * p = NULL;
+	  p = head;
+	  while(p != NULL)
+    {
+	      if(strcmp(cmd,p->cmd) == 0)
+		    {
+			      printf("repeat!please reinput\n");
+			      return 1;
+		    }
+		    p = p->next;
+	  }
+	      return 0;
 }
 
  /* Init cmd list */
 tDataNode* Init(tDataNode *head)
 {
-	int i;
-	tDataNode * p = NULL;
-	 for (i=0; i<CMD_NUM; i++)
+    int i;
+	  tDataNode * p = NULL;
+	  for (i=0; i<CMD_NUM; i++)
     {
         p = (tDataNode*)malloc(sizeof(tDataNode));
-       
         printf("please input %d cmd\n",i);
-		scanf("%s",p->cmd);
-		while( Check(p->cmd,head) == 1)
-		{
-			printf("please reinput %d cmd\n",i);
-			scanf("%s",p->cmd);
-		}
+		    scanf("%s",p->cmd);
+		    while( Check(p->cmd,head) == 1)
+		    {
+			      printf("please reinput %d cmd\n",i);
+			      scanf("%s",p->cmd);
+		    }
        
         snprintf(p->desc, DESC_LEN, "This is %s cmd!", p->cmd);
         p->next = head;
         head = p;
     }
-	 return head;
+	  return head;
 }
 
 /*show cmd list*/
 void ShowList(tDataNode *p)
 {
-	 while(p != NULL)
+    while(p != NULL)
     {
         printf("%s - %s\n", p->cmd, p->desc);
         p = p->next;
@@ -87,13 +81,12 @@ void ShowList(tDataNode *p)
 /* cmd line begins */
 void LineBegins(tDataNode *head)
 {
-	tDataNode *p;
-	while(1)
+    tDataNode *p;
+	  while(1)
     {
         char cmd[DESC_LEN];
         printf("Input a cmd > ");
-		scanf("%s",cmd);
-  
+		    scanf("%s",cmd);
         p = head;
         while(p != NULL)
         {
@@ -131,9 +124,9 @@ main()
 {
     tDataNode *head = NULL;
     tDataNode * p = NULL;
-	head = Init(head);  /* Init cmd list */
+	  head = Init(head);  /* Init cmd list */
     printf("Menu List:\n");
     p = head;
-	ShowList(p);        /*show cmd list*/              
-	LineBegins(head);   /* cmd line begins */
+	  ShowList(p);        /*show cmd list*/              
+	  LineBegins(head);   /* cmd line begins */
 }
