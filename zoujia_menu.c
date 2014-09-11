@@ -11,7 +11,12 @@
 /*  DESCRIPTION           :  This is a menu program                                               */
 /**************************************************************************************************/
 
-
+/*
+ * Revision log:
+ *
+ * Created by Zoujia, 2014/09/10
+ *
+ */
 
 
 #include <stdio.h>
@@ -31,24 +36,24 @@ typedef struct DataNode
 /*check the cmd repeat or not*/
 int Check(char* cmd,tDataNode *head)
 {
-    tDataNode * p = NULL;
+	  tDataNode * p = NULL;
 	  p = head;
 	  while(p != NULL)
-    {
-	      if(strcmp(cmd,p->cmd) == 0)
+	  {
+		    if(strcmp(cmd,p->cmd) == 0)
 		    {
 			      printf("repeat!please reinput\n");
 			      return 1;
 		    }
 		    p = p->next;
 	  }
-	      return 0;
+	  return 0;
 }
 
  /* Init cmd list */
 tDataNode* Init(tDataNode *head)
 {
-    int i;
+	  int i;
 	  tDataNode * p = NULL;
 	  for (i=0; i<CMD_NUM; i++)
     {
@@ -71,7 +76,7 @@ tDataNode* Init(tDataNode *head)
 /*show cmd list*/
 void ShowList(tDataNode *p)
 {
-    while(p != NULL)
+	  while(p != NULL)
     {
         printf("%s - %s\n", p->cmd, p->desc);
         p = p->next;
@@ -81,7 +86,7 @@ void ShowList(tDataNode *p)
 /* cmd line begins */
 void LineBegins(tDataNode *head)
 {
-    tDataNode *p;
+	  tDataNode *p;
 	  while(1)
     {
         char cmd[DESC_LEN];
@@ -100,13 +105,11 @@ void LineBegins(tDataNode *head)
                 break;
             }
         }
-        
         if(!p)
         {
             printf("This is a wrong cmd !\n ");
             continue;
         }
-        
         p = head;
         while(p != NULL)
         {
