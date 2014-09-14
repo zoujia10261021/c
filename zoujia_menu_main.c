@@ -61,7 +61,7 @@ main()
 
 int Help()
 {
-	printf("%s %s\n",head -> cmd,head -> desc);
- 	ShowAllCmd(head);
- 	return 0;
+    printf("%s %s\n",head -> cmd,head -> desc);
+    ShowAllCmd(head);
+    return 0;
 }
