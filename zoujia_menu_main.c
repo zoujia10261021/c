@@ -28,8 +28,8 @@ int Help();
   
 static tDataNode head[] =
 {	
-	{"help",    "- This is help menu",       Help, &head[1]},
-	{"version", "- menu program v1 version", NULL, NULL}    		
+    {"help",    "- This is help menu",       Help, &head[1]},
+    {"version", "- menu program v1 version", NULL, NULL}    		
 };
  
 main()
@@ -41,22 +41,22 @@ main()
     	printf("Intput a cmd >");
      	scanf("%s", cmd);
      	p = FindCmd(head,cmd);
-     	if(p)
-     	{
-     		if(p -> handler )
-     		{
-                p -> handler();
-     		}
-     		else
-     		{
-                printf("%s %s\n",p -> cmd,p -> desc);
-     		}
-     	}
-     	else
-     	{
+        if(p)
+            {
+                if(p -> handler )
+                {
+                    p -> handler();
+                }
+                else
+                {
+                    printf("%s %s\n",p -> cmd,p -> desc);
+                }
+            }
+        else
+        {
             printf("This is a wrong cmd\n");
-     	}
-     }	
+        }
+    }	
  }
 
 int Help()
