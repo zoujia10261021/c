@@ -57,7 +57,7 @@ main()
             printf("This is a wrong cmd\n");
         }
     }	
- }
+}
 
 int Help()
 {
