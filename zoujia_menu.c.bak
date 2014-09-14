@@ -50,7 +50,7 @@ int Check(char* cmd,tDataNode *head)
     return 0;
 }
 
-/* Init cmd list */
+ /* Init cmd list */
 tDataNode* Init(tDataNode *head)
 {
     int i;
