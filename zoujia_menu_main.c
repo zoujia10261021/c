@@ -42,16 +42,16 @@ main()
      	scanf("%s", cmd);
      	p = FindCmd(head,cmd);
         if(p)
+        {
+            if(p -> handler )
             {
-                if(p -> handler )
-                {
-                    p -> handler();
-                }
-                else
-                {
-                    printf("%s %s\n",p -> cmd,p -> desc);
-                }
+               p -> handler();
             }
+            else
+            {
+               printf("%s %s\n",p -> cmd,p -> desc);
+            }
+        }
         else
         {
             printf("This is a wrong cmd\n");

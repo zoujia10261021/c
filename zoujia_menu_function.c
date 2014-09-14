@@ -24,13 +24,13 @@ tDataNode* FindCmd(tDataNode *head, char *cmd)
     }
     tDataNode *p = head;
     while( p != NULL )
-	{
+    {
         if( !strcmp( p -> cmd, cmd ) )
         {
             return p;
         }
         p = p -> next;
-	}
+    }
     return NULL;
 }
  
