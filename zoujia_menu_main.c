@@ -45,16 +45,16 @@ main()
      	{
      		if(p -> handler )
      		{
-     			p -> handler();
+                p -> handler();
      		}
      		else
      		{
-     			printf("%s %s\n",p -> cmd,p -> desc);
+                printf("%s %s\n",p -> cmd,p -> desc);
      		}
      	}
      	else
      	{
-     		printf("This is a wrong cmd\n");
+            printf("This is a wrong cmd\n");
      	}
      }	
  }
