@@ -21,10 +21,10 @@
  
 typedef struct DataNode
 {
-	char*   cmd;
- 	char*   desc;
- 	int     (*handler)();
- 	struct  DataNode *next;
+    char*   cmd;
+    char*   desc;
+    int     (*handler)();
+    struct  DataNode *next;
 } tDataNode;
  
 /* find the cmd that you inputed */  

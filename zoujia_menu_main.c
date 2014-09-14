@@ -34,7 +34,7 @@ static tDataNode head[] =
  
 main()
 {
-	tDataNode* p;
+    tDataNode* p;
  	char cmd[CMD_MAX_LEN];
     while(1)
     { 	
@@ -58,7 +58,7 @@ main()
      	}
      }	
  }
- 
+
 int Help()
 {
 	printf("%s %s\n",head -> cmd,head -> desc);

@@ -18,12 +18,12 @@
 
 tDataNode* FindCmd(tDataNode *head, char *cmd)
 {
-	if( head == NULL || cmd == NULL )
+    if( head == NULL || cmd == NULL )
 	{
 	    return NULL;
 	}
-	tDataNode *p = head;
-	while( p != NULL )
+    tDataNode *p = head;
+    while( p != NULL )
 	{
 		if( !strcmp( p -> cmd, cmd ) )
 		{
@@ -31,17 +31,17 @@ tDataNode* FindCmd(tDataNode *head, char *cmd)
 		}
 		p = p -> next;
 	}
-	return NULL;
+    return NULL;
 }
  
 int ShowAllCmd(tDataNode *head)
 {
-	printf("cmd list:\n");
- 	tDataNode *p = head;
- 	while( p != NULL)
+    printf("cmd list:\n");
+    tDataNode *p = head;
+    while( p != NULL)
  	{
  		printf("%s %s\n",p -> cmd,p -> desc);
  		p = p -> next;
  	}	
- 	return 0;
+    return 0;
 }
